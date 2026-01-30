@@ -1,0 +1,79 @@
+{
+  "name": "pokemon-dimension-portal",
+  "version": "1.0.0",
+  "description": "A stunning 3D Pokemon discovery experience with Three.js, particles, and holographic effects",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --mac --arm64",
+    "build:universal": "electron-builder --mac --universal",
+    "build:intel": "electron-builder --mac --x64"
+  },
+  "author": "Barak Almog",
+  "license": "MIT",
+  "keywords": [
+    "electron",
+    "threejs",
+    "three.js",
+    "tsparticles",
+    "gsap",
+    "pokemon",
+    "pokeapi",
+    "desktop-app",
+    "3d",
+    "particles",
+    "animation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BarakAlmog/monster-portal.git"
+  },
+  "homepage": "https://github.com/BarakAlmog/monster-portal#readme",
+  "devDependencies": {
+    "electron": "^40.1.0",
+    "electron-builder": "^26.6.0"
+  },
+  "build": {
+    "appId": "com.pokemon.dimension-portal",
+    "productName": "Pokemon Dimension Portal",
+    "mac": {
+      "category": "public.app-category.entertainment",
+      "icon": "assets/icon.icns",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["arm64"]
+        }
+      ],
+      "darkModeSupport": true,
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false
+    },
+    "dmg": {
+      "background": null,
+      "icon": null,
+      "iconSize": 128,
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "files": [
+      "**/*",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!**/*.{ts,map}"
+    ],
+    "directories": {
+      "output": "dist"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com; connect-src 'self' https://pokeapi.co; img-src 'self' https://raw.githubusercontent.com data: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+  <title>Pokémon Dimension Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Particle Background -->
+  <div id="tsparticles"></div>
+
+  <!-- Three.js Canvas -->
+  <canvas id="pokeball-canvas"></canvas>
+
+  <!-- Floating Orbs Background -->
+  <div class="floating-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+    <div class="orb orb-5"></div>
+  </div>
+
+  <!-- Scanlines Overlay -->
+  <div class="scanlines"></div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Title with Glitch Effect -->
+    <h1 class="title">
+      <span class="title-text" data-text="DIMENSION PORTAL">DIMENSION PORTAL</span>
+      <span class="title-sub">Pokémon Discovery System v2.0</span>
+    </h1>
+
+    <!-- Instruction Text -->
+    <p class="instruction" id="instruction">Click the Pokéball to open a dimensional rift</p>
+
+    <!-- Pokemon Hologram Card -->
+    <div id="pokemon-card" class="pokemon-card hidden">
+      <div class="hologram-container">
+        <div class="hologram-rings">
+          <div class="ring ring-1"></div>
+          <div class="ring ring-2"></div>
+          <div class="ring ring-3"></div>
+        </div>
+        <div class="pokemon-display">
+          <div class="scan-line"></div>
+          <img id="pokemon-image" src="" alt="Pokemon">
+          <div class="glitch-overlay"></div>
+        </div>
+      </div>
+
+      <div class="pokemon-info">
+        <div class="info-header">
+          <h2 id="pokemon-name"></h2>
+          <span id="pokemon-id" class="pokemon-id"></span>
+        </div>
+        <div id="pokemon-types" class="types"></div>
+        <div class="stats-container">
+          <div class="stats-header">
+            <span class="stats-title">BASE STATISTICS</span>
+            <span class="stats-total" id="stats-total"></span>
+          </div>
+          <div id="pokemon-stats" class="stats"></div>
+        </div>
+      </div>
+
+      <div class="card-decorations">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+      </div>
+    </div>
+
+    <!-- Catch Button -->
+    <button id="generate-btn" class="catch-btn">
+      <span class="btn-bg"></span>
+      <span class="btn-text">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+        OPEN PORTAL
+      </span>
+      <span class="btn-shine"></span>
+    </button>
+  </div>
+
+  <!-- Portal Effect Overlay -->
+  <div id="portal-effect" class="portal-effect"></div>
+
+  <!-- Screen Flash -->
+  <div id="screen-flash" class="screen-flash"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>

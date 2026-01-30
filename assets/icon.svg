@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <!-- Background gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#1a0a2e"/>
+      <stop offset="100%" style="stop-color:#0a0a0f"/>
+    </radialGradient>
+
+    <!-- Portal glow -->
+    <radialGradient id="portalGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#00f5ff;stop-opacity:0.8"/>
+      <stop offset="50%" style="stop-color:#8b00ff;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#ff00aa;stop-opacity:0"/>
+    </radialGradient>
+
+    <!-- Red top gradient -->
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b"/>
+      <stop offset="100%" style="stop-color:#cc2a2a"/>
+    </linearGradient>
+
+    <!-- White bottom gradient -->
+    <linearGradient id="whiteGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#d0d0d0"/>
+    </linearGradient>
+
+    <!-- Button glow -->
+    <radialGradient id="buttonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="40%" style="stop-color:#00f5ff"/>
+      <stop offset="100%" style="stop-color:#0088aa"/>
+    </radialGradient>
+
+    <!-- Outer glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Inner shadow -->
+    <filter id="innerShadow">
+      <feOffset dx="0" dy="4"/>
+      <feGaussianBlur stdDeviation="3"/>
+      <feComposite operator="out" in="SourceGraphic"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/>
+      <feBlend mode="normal" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="512" cy="512" r="500" fill="url(#bgGrad)"/>
+
+  <!-- Outer portal rings -->
+  <circle cx="512" cy="512" r="420" fill="none" stroke="#8b00ff" stroke-width="2" opacity="0.3"/>
+  <circle cx="512" cy="512" r="380" fill="none" stroke="#00f5ff" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="512" cy="512" r="460" fill="none" stroke="#ff00aa" stroke-width="1" opacity="0.2"/>
+
+  <!-- Portal glow behind pokeball -->
+  <circle cx="512" cy="512" r="280" fill="url(#portalGlow)"/>
+
+  <!-- Pokeball shadow -->
+  <ellipse cx="512" cy="750" rx="200" ry="40" fill="#000" opacity="0.3"/>
+
+  <!-- Pokeball main body -->
+  <g filter="url(#glow)">
+    <!-- Top half (red) -->
+    <path d="M 512 212
+             A 250 250 0 0 1 762 462
+             L 262 462
+             A 250 250 0 0 1 512 212 Z"
+          fill="url(#redGrad)"/>
+
+    <!-- Bottom half (white) -->
+    <path d="M 512 712
+             A 250 250 0 0 1 262 462
+             L 762 462
+             A 250 250 0 0 1 512 712 Z"
+          fill="url(#whiteGrad)"/>
+
+    <!-- Center band -->
+    <rect x="262" y="442" width="500" height="40" fill="#1a1a1a"/>
+
+    <!-- Center button outer ring -->
+    <circle cx="512" cy="462" r="80" fill="#1a1a1a"/>
+
+    <!-- Center button -->
+    <circle cx="512" cy="462" r="55" fill="url(#buttonGlow)" filter="url(#glow)"/>
+
+    <!-- Button highlight -->
+    <circle cx="495" cy="445" r="20" fill="#fff" opacity="0.6"/>
+  </g>
+
+  <!-- Sparkles -->
+  <g fill="#00f5ff">
+    <circle cx="280" cy="280" r="8" opacity="0.8"/>
+    <circle cx="744" cy="320" r="6" opacity="0.6"/>
+    <circle cx="200" cy="500" r="5" opacity="0.5"/>
+    <circle cx="824" cy="480" r="7" opacity="0.7"/>
+    <circle cx="350" cy="750" r="4" opacity="0.4"/>
+    <circle cx="680" cy="720" r="5" opacity="0.5"/>
+  </g>
+
+  <!-- Star sparkles -->
+  <g fill="#ff00aa">
+    <polygon points="150,350 155,365 170,365 158,375 163,390 150,380 137,390 142,375 130,365 145,365" opacity="0.6"/>
+    <polygon points="850,600 853,610 863,610 855,617 858,627 850,620 842,627 845,617 837,610 847,610" opacity="0.5"/>
+  </g>
+</svg>

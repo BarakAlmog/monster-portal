@@ -1,17 +1,18 @@
 # Monster Portal
 
-> **Disclaimer:** This is an unofficial fan project created for educational purposes to demonstrate Electron app development with Three.js, tsParticles, and GSAP. It is not affiliated with, endorsed by, or connected to Nintendo, The Pokémon Company, or any of their subsidiaries. No commercial use is intended. All Pokémon content and imagery belong to their respective owners.
+<p align="center">
+  <img src="./screenshots/demo.gif" alt="Monster Portal Demo" width="450">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+  <img src="https://img.shields.io/badge/Electron-40.1.0-47848F?logo=electron" alt="Electron">
+  <img src="https://img.shields.io/badge/Three.js-r128-black?logo=three.js" alt="Three.js">
+</p>
 
 A visually stunning Electron desktop app featuring 3D graphics, particle effects, and smooth animations. Built as a learning project to explore modern frontend techniques in a desktop environment.
 
-<p align="center">
-  <img src="./screenshots/demo.gif" alt="Monster Portal Demo" width="400">
-</p>
-
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Electron](https://img.shields.io/badge/Electron-40.1.0-47848F?logo=electron)
-![Three.js](https://img.shields.io/badge/Three.js-r128-black?logo=three.js)
-
+> **Disclaimer:** This is an unofficial fan project for educational purposes. Not affiliated with Nintendo or The Pokémon Company. All Pokémon content belongs to their respective owners.
 ## ✨ Features
 
 - **3D Pokéball** — Interactive Three.js model with physics-based opening animation
@@ -120,12 +121,6 @@ How do I compile it to run it on my machine? I have a Mac with Apple Silicon M1.
 ```
 
 That's it. The whole app came from a conversation - starting with "how do I make a Hello World" and ending with a 3D animated Pokémon portal.
-
-## 📸 Screenshot
-
-<p align="center">
-  <img src="./screenshots/demo.png" alt="Monster Portal Screenshot" width="400">
-</p>
 
 ## 📄 License
 
